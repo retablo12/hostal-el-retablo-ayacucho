@@ -515,6 +515,12 @@ const htmlRedes = Object.entries(redes).map(([nombre,url]) =>
 
 document.getElementById("socialTop").innerHTML = htmlRedes;
 document.getElementById("socialFooter").innerHTML = htmlRedes;
+// Cerrar el menú móvil al hacer clic en un enlace
+document.querySelectorAll('.links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.links').classList.remove('show');
+  });
+});
 </script>
 
 </body>
