@@ -113,6 +113,63 @@ footer .social a { display:inline-flex; }
   .links { gap:12px; }
   .hero { min-height:400px; }
 }
+/* ========================================== */
+/* ESTILOS PARA DISPOSITIVOS MÓVILES (NUEVOS) */
+/* ========================================== */
+@media (max-width: 800px) {
+  /* 1. Ocultar el menú de enlaces normal */
+  .links {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--crema);
+    position: absolute;
+    top: 76px; /* Justo debajo del header */
+    left: 0;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+
+  /* 2. Mostrar el menú cuando se activa la clase 'show' */
+  .links.show {
+    display: flex;
+  }
+
+  /* 3. Estilo para el botón de hamburguesa */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    color: var(--verde);
+  }
+
+  /* 4. Apilar los botones de la portada (Hero) */
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 5. Ajustar el botón flotante de WhatsApp para que no tape el contenido */
+  .float-wa {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Ocultar el botón de hamburguesa en escritorio */
+.hamburger {
+  display: none;
+}
 </style>
 
 <!-- ========================================== -->
