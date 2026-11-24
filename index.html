@@ -124,12 +124,29 @@ footer .social a { display:inline-flex; }
     z-index: 1000;
   }
 
-  /* 2. Ordenar la barra verde superior */
+   /* 2. Ordenar la barra verde superior */
   .topbar .wrap {
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
+    align-items: center; /* Centra todo horizontalmente */
+    gap: 10px;
     text-align: center;
+  }
+
+  /* Hacer que los textos de la dirección y teléfono se centren y ajusten */
+  .topbar .wrap > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; 
+    font-size: 11px; /* Un poquito más pequeño para que no se amontone */
+  }
+
+  /* Centrar los íconos de redes sociales */
+  .social {
+    justify-content: center;
+    width: 100%;
   }
 
   /* 3. Ocultar el botón rojo "Reservar ahora" de la cabecera para no amontonar */
