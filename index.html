@@ -117,19 +117,75 @@ footer .social a { display:inline-flex; }
 /* ESTILOS PARA DISPOSITIVOS MÓVILES (NUEVOS) */
 /* ========================================== */
 @media (max-width: 800px) {
-  /* 1. Ocultar el menú de enlaces normal */
+  /* 1. Hacer que el header (menú) se quede fijo arriba al bajar */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* 2. Ordenar la barra verde superior */
+  .topbar .wrap {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* 3. Ocultar el botón rojo "Reservar ahora" de la cabecera para no amontonar */
+  nav .btn.reserva {
+    display: none !important;
+  }
+
+  /* 4. Estilos del menú desplegable */
   .links {
     display: none; 
     flex-direction: column;
     width: 100%;
     background-color: var(--crema);
     position: absolute;
-    top: 76px; /* Justo debajo del header */
+    top: 100%; /* Cae justo debajo del header */
     left: 0;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 100;
   }
+
+  .links.show {
+    display: flex !important;
+  }
+
+  /* 5. Estilo de la hamburguesa */
+  .hamburger {
+    display: block !important;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 32px;
+    color: var(--rojo);
+    margin-left: auto;
+    padding: 5px;
+  }
+
+  /* 6. Apilar los botones de la portada (Hero) */
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 7. Ajustar el botón flotante de WhatsApp */
+  .float-wa {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
 
   /* 2. Mostrar el menú cuando se activa la clase 'show' */
   .links.show {
